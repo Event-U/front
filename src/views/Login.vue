@@ -21,6 +21,7 @@ import Background from '../components/Background'
 import TitleInitial from '../components/TitleInitial'
 import Button from '../components/Button'
 
+console.log('Login')
 export default {
   name: 'Index',
   components: {
