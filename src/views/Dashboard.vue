@@ -61,7 +61,9 @@
             <main>
                 <div class="container-fluid">
 
-                    <div class="row"></div>
+                    <div class="row">
+                        <organizator></organizator>
+                    </div>
                 </div>
             </main>
         </div>
@@ -71,7 +73,12 @@
 </template>
 
 <script>
+import organizator from '../components/organizator'
 export default {
+  name: 'Dashboard',
+  components: {
+    organizator
+  }
 
 }
 </script>
