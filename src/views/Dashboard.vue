@@ -1,84 +1,148 @@
 <template>
-
-<div>
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-
-        <button class="navbar-toggler sideMenuToggler" type="button">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#"><img src="assets/img/Frame.png" alt="" srcset="" style="width: 50%;"></a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <button type="button" class="btn-transparent"><i class="material-icons text-mattRed">account_circle</i></button>
-                    <button type="button" class="btn-transparent"><i class="material-icons icon text-mattRed">settings</i></button>
-                </li>
-            </ul>
-        </div>
+  <div>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
+      <button class='navbar-toggler sideMenuToggler' type='button'>
+        <span class='navbar-toggler-icon'></span>
+      </button>
+      <a class='navbar-brand' href='#'>
+        <img src='../assets/img/Frame.png' alt srcset style='width: 50%;' />
+      </a>
+      <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+        <ul class='navbar-nav ml-auto'>
+          <li class='nav-item dropdown'>
+            <button type='button' class='btn-transparent'>
+              <i class='material-icons text-mattRed'>account_circle</i>
+            </button>
+            <button type='button' class='btn-transparent'>
+              <i class='material-icons icon text-mattRed'>settings</i>
+            </button>
+          </li>
+        </ul>
+      </div>
     </nav>
-    <div class="wrapper d-flex">
-        <div class="sideMenu bg-mattBlackLight">
-            <div class="sidebar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link px-2 sideMenuToggler">
-                            <i class="material-icons icon">
-                            dashboard
-                        </i><span class="text">Mis Eventos</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link px-2 sideMenuToggler">
-                            <i class="material-icons icon">group</i>
-                            <span class="text">Mis proveedores</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link px-2 sideMenuToggler">
-                            <i class="material-icons icon">insert_chart</i>
-                            <span class="text">Estadisticas</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link px-2 sideMenuToggler">
-                            <i class="material-icons icon">post_add</i>
-                            <span class="text">Ordenes de Compra</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link px-2 sideMenuToggler">
-                            <i class="material-icons icon">work</i>
-                            <span class="text">Servicios</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link sideMenuToggler px-2">
-                            <i class="material-icons icon">trending_up</i>
-                            <span class="text">Mis Inversiones</span></a>
-                    </li>
-                </ul>
+    <div class='wrapper d-flex'>
+      <div class='sideMenu bg-mattBlackLight'>
+        <div class='sidebar'>
+          <ul class='navbar-nav'>
+            <li class='nav-item'>
+              <a href='#' class='nav-link px-2 sideMenuToggler d-flex align-items-center'>
+                <i class='material-icons icon mr-3'>dashboard</i>
+                <span class='text'>Mis Eventos</span>
+              </a>
+            </li>
+            <li class='nav-item'>
+              <a href='#' class='nav-link px-2 sideMenuToggler d-flex align-items-center'>
+                <i class='material-icons icon mr-3'>group</i>
+                <span class='text'>Mis proveedores</span>
+              </a>
+            </li>
+            <li class='nav-item'>
+              <a href='#' class='nav-link px-2 sideMenuToggler d-flex align-items-center'>
+                <i class='material-icons icon mr-3'>insert_chart</i>
+                <span class='text'>Estadisticas</span>
+              </a>
+            </li>
+            <li class='nav-item'>
+              <a href='#' class='nav-link px-2 sideMenuToggler d-flex align-items-center'>
+                <i class='material-icons icon mr-3'>post_add</i>
+                <span class='text'>Ordenes de Compra</span>
+              </a>
+            </li>
+            <li class='nav-item'>
+              <a href='#' class='nav-link px-2 sideMenuToggler d-flex align-items-center'>
+                <i class='material-icons icon mr-3'>work</i>
+                <span class='text'>Servicios</span>
+              </a>
+            </li>
+            <li class='nav-item'>
+              <a href='#' class='nav-link sideMenuToggler px-2 d-flex align-items-center'>
+                <i class='material-icons icon mr-3'>trending_up</i>
+                <span class='text'>Mis Inversiones</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class='content'>
+        <main>
+          <div class='container-fluid'>
+            <div class='row'>
+              <organizator v-on:click="changePage(1)" ></organizator>
+              <CategoryServices v-on:click="changePage(2)"></CategoryServices>
+              <AllCharts v-on:click="changePage(3)"></AllCharts>
+              <ServiceList v-on:click="changePage(4)"></ServiceList>
             </div>
-        </div>
-        <div class="content">
-            <main>
-                <div class="container-fluid">
-
-                    <div class="row">
-                        <organizator></organizator>
-                    </div>
-                </div>
-            </main>
-        </div>
+          </div>
+        </main>
+      </div>
     </div>
-</div>
-
+  </div>
 </template>
 
 <script>
 import organizator from '../components/organizator'
+import CategoryServices from '../components/CategoryServices'
+import AllCharts from '../components/AllCharts'
+import ServiceList from '../components/ServiceList'
 export default {
   name: 'Dashboard',
   components: {
-    organizator
+    organizator,
+    CategoryServices,
+    AllCharts,
+    ServiceList
+  },
+  data () {
+    return {
+      mostrarOrganizador: true,
+      mostrarServicios: false,
+      mostrarCatServicios: false,
+      mostrarCharts: false
+    }
+  },
+  methods: {
+    changePage: function (menuOpen) {
+      let menuOptions = {
+        mostrarOrganizador: false,
+        mostrarServicios: false,
+        mostrarCatServicios: false,
+        mostrarCharts: false
+      }
+      switch (menuOpen) {
+        case 1:
+          menuOptions.mostrarOrganizador = true
+          menuOptions.mostrarCatServicios = false
+          menuOptions.mostrarCharts = false
+          menuOptions.mostrarServicios = false
+          break
+        case 2:
+          menuOptions.mostrarOrganizador = false
+          menuOptions.mostrarCatServicios = true
+          menuOptions.mostrarCharts = false
+          menuOptions.mostrarServicios = false
+          break
+        case 3:
+          menuOptions.mostrarOrganizador = false
+          menuOptions.mostrarCatServicios = false
+          menuOptions.mostrarCharts = true
+          menuOptions.mostrarServicios = false
+          break
+        case 4:
+          menuOptions.mostrarOrganizador = false
+          menuOptions.mostrarCatServicios = false
+          menuOptions.mostrarCharts = false
+          menuOptions.mostrarServicios = true
+          break
+        default:
+          menuOptions.mostrarOrganizador = true
+          menuOptions.mostrarCatServicios = false
+          menuOptions.mostrarCharts = false
+          menuOptions.mostrarServicios = false
+      }
+      return {
+        menuOptions
+      }
+    }
   }
-
 }
 </script>

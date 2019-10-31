@@ -1,5 +1,5 @@
 <template>
-  <div class="offset-1 col-md-10 mt-3">
+  <div class="col-md-12 mt-3">
     <nav class="bg-mattBlackLight text-muted m-auto">
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
         <a
@@ -24,11 +24,13 @@
     </nav>
     <div class="tab-content" id="nav-tabContent">
       <div
-        class="tab-pane fade show active"
+        class="tab-pane fade show active pt-3"
         id="nav-home"
         role="tabpanel"
         aria-labelledby="nav-home-tab"
-      ></div>
+      >
+      <MyEvents></MyEvents>
+      </div>
       <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
         <AddEvents></AddEvents>
       </div>
@@ -38,10 +40,12 @@
 
 <script>
 import AddEvents from './AddEvents'
+import MyEvents from './MyEvents'
 export default {
   name: 'organizator',
   components: {
-    AddEvents
+    AddEvents,
+    MyEvents
   }
 }
 </script>
