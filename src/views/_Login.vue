@@ -3,16 +3,12 @@
 <div class="background" id="background">
   <div class="container">
   <logo/>
-  <div class="row">
-    <div class="col display-flex">
         <form class="form-body">
           <TitleInitial />
           <FormGroup />
           <Button />
-          <a href="/#/register" class="form-text">¿Aun no creas una cuenta?</a>
+          <a href="/register" class="form-text">¿Aun no creas una cuenta?</a>
         </form>
-        </div>
-        </div>
     </div>
   </div>
   </div>
@@ -25,6 +21,7 @@ import Background from '../components/Background'
 import TitleInitial from '../components/TitleInitial'
 import Button from '../components/Button'
 
+console.log('Login')
 export default {
   name: 'Index',
   components: {
@@ -39,10 +36,6 @@ export default {
 </script>
 
 <style scoped>
-.row{
-      text-align: -webkit-center;
-
-}
 #background {
     background: linear-gradient( rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.16)), url(../assets/bg-loginn.jpg);
     background-size: cover;
@@ -77,30 +70,5 @@ form{
 }
 .form-body{
   align-items:center;
-}
-@media (max-width: 700px) {
-    .container {
-        min-width: 100%;
-    }
-    #background {
-        height: 900px!important;
-        background: /* top, transparent red, faked with gradient */
-        linear-gradient( rgba(0, 0, 0, 0.73), rgba(0, 0, 0, 0.12)), url(../assets/bg-loginn.jpg),cover;
-        background-position-x: center;
-    }
-    .form-text {
-        font-size: 1em;
-    }
-     .btn-yellow {
-      border-radius: 8px;
-    font-size: 17px!important;
-    font-weight: bold;
-    color:black;
-    padding: 5px 10%;
-    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
-    }
-    form{
-  max-width: 80%;
-  }
 }
 </style>

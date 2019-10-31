@@ -69,3 +69,46 @@
     </div>
   </form>
 </template>
+<script>
+
+export default {
+  name: 'AddEvents'
+}
+</script>
+<style scoped>
+.taDescription:hover{
+  text-decoration: underline;
+}
+.btn-danger {
+    color: #fff!important;
+    background-color: #ff0000!important;
+    border-color: #dc3545;
+}
+button {
+    background: #ffff00;
+    /* box-shadow: 2px 3px 6px 3px 3px #33333; */
+    border-radius: 12px;
+    font-size: 23px!important;
+    color:black;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+    padding:1% 15%;
+    }
+label{
+      font-size: 1.7em!important;
+}
+.custom-control{
+  height:10px!important;
+  display:flex;
+  align-content: center;
+  background: transparent!important;
+}
+.inputCuston {
+  height:2.4em;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 8px;
+    font-size:1.6em;
+    transition: .5s ease-in;
+    color:white;
+}
+</style>

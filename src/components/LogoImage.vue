@@ -11,5 +11,7 @@ export default {
 </script>
 
 <style>
-
+.logo img{
+  max-width:20%;
+}
 </style>

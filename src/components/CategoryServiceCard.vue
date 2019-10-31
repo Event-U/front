@@ -7,7 +7,7 @@
             <span class="star-rate fa fa-star checked"></span>
             <span class="star-rate fa fa-star"></span>
             <span class="star-rate fa fa-star"></span>
-            <h5 class="card-title list-services border-0">Sillas Don Peter</h5>
+            <h5 class="card-title list-services border-0">{{ ServiceTitle }}</h5>
             <p class="card-text">Las mejores sillas del condado.Las mejores sillas del condado.Las mejores sillas del condado.Las mejores sillas del condado.Las mejores sillas del condado.</p>
             <a href="#" class="btn btn-primary btn-evntu">Generar órden de compra</a>
             <div class="service-price-container">
@@ -20,8 +20,16 @@
 
 <script>
 export default {
-  name: 'CategoryServiceCard'
+  name: 'CategoryServiceCard',
+  props: {
+    ServiceTitle: {
+      type: String,
+      default: ''
+    }
+  }
+
 }
+
 </script>
 
 <style>

@@ -82,3 +82,24 @@ export default {
 
 }
 </script>
+<style scoped>
+.text-muted {
+    color: white!important;
+    font-size: 1.2em;
+}
+.bg-dark {
+    background-color: #252B48!important;
+}
+.bg-mattBlackDark {
+    background-color: #1C2038;
+}
+.nav-tabs{
+    border-bottom: 1px solid #dee2e6!important;
+    background-color: #252B48!important;
+    box-shadow: 5px 5px 25px 0px #00000030!important;
+}
+.nav-tabs .nav-link.active {
+    color: black!important;
+    background-color: #ffff00;
+    border-color: #dee2e6 #dee2e6 #fff;}
+</style>

@@ -45,3 +45,38 @@ export default {
   }
 }
 </script>
+<style scoped>
+
+.border-eventU {
+    border-color: #FFFFff !important;
+    background-color: #252B48;
+    border-radius: 8px!important;
+    box-shadow: 1px 1px 25px 0px #0000002e;
+}
+.border-eventU:hover{
+    border-color: #FFFF00 !important;
+    background-color: #252B48;
+    border-radius: 8px!important;
+    box-shadow: 1px 1px 20px 0px #000000;
+            transition: ease-in .6s;
+
+}
+.text-muted {
+    color: white!important;
+    font-size: 1.2em;
+    border-radius:8px;
+}
+
+.nav-tabs{
+    border-bottom: 1px solid #dee2e6!important;
+    background-color: #252B48!important;
+    box-shadow: 5px 5px 25px 0px #00000030!important;
+}
+.nav-tabs .nav-link.active {
+    color: black!important;
+    background-color: #ffff00;
+    font-weight: 500;
+    border-color: #dee2e6 #dee2e6 #fff;
+        transition: ease-in .4s;
+}
+</style>
