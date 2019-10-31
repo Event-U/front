@@ -2,6 +2,11 @@
   <div class="card text-center">
         <img src="../assets/img/anthony-reungere-6bObR3bngCA-unsplash.jpg" class="card-img-top" alt="Placeholder">
         <div class="card-body">
+            <span class="star-rate fa fa-star checked"></span>
+            <span class="star-rate fa fa-star checked"></span>
+            <span class="star-rate fa fa-star checked"></span>
+            <span class="star-rate fa fa-star"></span>
+            <span class="star-rate fa fa-star"></span>
             <h5 class="card-title list-services border-0">Sillas Don Peter</h5>
             <p class="card-text">Las mejores sillas del condado.Las mejores sillas del condado.Las mejores sillas del condado.Las mejores sillas del condado.Las mejores sillas del condado.</p>
             <a href="#" class="btn btn-primary btn-evntu">Generar órden de compra</a>
@@ -46,11 +51,11 @@ export default {
 .btn-evntu {
     background-color: #ffff00!important;
     color: #000000;
-    font-size: 1em;
+    font-size: .9em;
     border-radius: 12px;
     border: none;
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
-    padding: 9px 25%;
+    padding: 9px 20%;
 }
 
 .btn-evntu:hover {
@@ -73,5 +78,11 @@ export default {
 .list-services-content img {
     border-radius: 50px 12px 5px!important;
     max-width: 100%!important;
+}
+.star-rate{
+    margin-top:0px!important;
+}
+.checked {
+  color: #ffff00;
 }
 </style>

@@ -1,12 +1,17 @@
 <template>
  <div id="index">
-
+   <Investors/>
 </div>
 </template>
 
 <script>
+import Investors from '../components/Investors'
+
 export default {
-  name: 'Index'
+  name: 'Index',
+  components: {
+    Investors
+  }
 }
 </script>
 
