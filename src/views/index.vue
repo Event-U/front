@@ -1,6 +1,6 @@
 <template>
 <div id="index">
-    <OrderList/>
+    <NewEventForm/>
 </div>
 </template>
 

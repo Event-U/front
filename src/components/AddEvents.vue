@@ -101,7 +101,6 @@ export default {
       let res = await api.createEvent(event)
       console.log(res)
       this.loading = false
-
       this.$router.push('/')
     }
   }

@@ -9,10 +9,6 @@
             <h5 class="card-title list-services border-0">Mi gran evento</h5>
             <p class="card-text">Las mejores sillas del condado.Las mejores sillas del condado.Las mejores sillas del condado.Las mejores sillas del condado.Las mejores sillas del condado.</p>
             <button class="button button-primary" data-toggle="modal" data-target="#exampleModal5" data-whatever="@mdo">Generar cotización</button>
-<<<<<<< HEAD
-
-=======
->>>>>>> dbf406cf0073baa6f5cb0171786b8124d34ce263
         </div>
     </div>
                             </div>
