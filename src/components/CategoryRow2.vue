@@ -16,11 +16,11 @@
 </template>
 
 <script>
-import ServiceCategoryCard from '../components/ServiceCategoryCard'
+import ServiceCategoryCard from './ServiceCategoryCard'
 
 export default {
   name: 'CategoryRow2',
-  component: {
+  components: {
     ServiceCategoryCard
   }
 }
