@@ -10,7 +10,6 @@
 
                                     <thead>
                                         <tr>
-                                            <!--<th class="selector h5"><button class="button-check"></button></th>-->
                                             <th><span>Evento</span></th>
                                             <th><span>Servicio</span></th>
                                             <th><span>Proveedor</span></th>
@@ -18,7 +17,7 @@
                                             <th><span>Estado</span></th>
                                             <th></th>
                                         </tr>
-                                    </thead><!-- Table Head End -->
+                                    </thead>
 
                                     <tbody>
                                         <tr>
@@ -53,7 +52,7 @@
                                             <td><span class="badge badge-danger">Rechazada</span></td>
                                             <td><a class="h3" href="#"><i class="zmdi zmdi-more"></i></a></td>
                                         </tr>
-                                    </tbody><!-- Table Body End -->
+                                    </tbody>
 
                                 </table>
                             </div>
