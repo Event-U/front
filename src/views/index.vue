@@ -1,6 +1,6 @@
 <template>
 <div id="index">
-    <NewEventForm/>
+    <ListEventsProviders/>
 </div>
 </template>
 
