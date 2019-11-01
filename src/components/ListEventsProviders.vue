@@ -9,7 +9,10 @@
             <h5 class="card-title list-services border-0">Mi gran evento</h5>
             <p class="card-text">Las mejores sillas del condado.Las mejores sillas del condado.Las mejores sillas del condado.Las mejores sillas del condado.Las mejores sillas del condado.</p>
             <button class="button button-primary" data-toggle="modal" data-target="#exampleModal5" data-whatever="@mdo">Generar cotización</button>
+<<<<<<< HEAD
 
+=======
+>>>>>>> dbf406cf0073baa6f5cb0171786b8124d34ce263
         </div>
     </div>
                             </div>
@@ -102,24 +105,20 @@ export default {
         box-shadow: 0px 0px 30px rgba(0, 0, 0, .2);
 
 }
-
 .list-services-content .card-text {
     color: #333333;
     font-weight: normal!important;
     font-size: .8em;
 }
-
 .list-services-content .card:hover {
     border: solid #ffff00 3px;
     box-shadow: 0px 0px 25px #0000009e;
     transition: ease-in 0.3s;
 }
-
 .list-services {
     font-size: 2em;
     color: black;
 }
-
 .button{
     background-color: #ffff00!important;
     color: #000000;
@@ -129,7 +128,6 @@ export default {
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
     padding: 9px 15%;
 }
-
 .button:hover {
     border: solid 2px;
     border-color: black!important;

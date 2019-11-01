@@ -5,6 +5,7 @@ import Login from '@/views/Login';
 import RegisterAcount from '@/views/RegisterAcount';
 import Dashboard from '@/views/Dashboard';
 import Index from '@/views/Index';
+import Landing from '@/views/Landing';
 Vue.use(Router)
 
 export default new Router({
@@ -22,6 +23,11 @@ export default new Router({
             path: '/dashboard',
             name: 'Dashboard',
             component: Dashboard
+        },
+        {
+            path: '/Landing',
+            name: 'Landing',
+            component: Landing
         }
     ]
 })
