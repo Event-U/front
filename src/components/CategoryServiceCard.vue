@@ -8,23 +8,30 @@
             <span class="star-rate fa fa-star"></span>
             <span class="star-rate fa fa-star"></span>
             <h5 class="card-title list-services border-0">{{ ServiceTitle }}</h5>
-            <p class="card-text">Las mejores sillas del condado.Las mejores sillas del condado.Las mejores sillas del condado.Las mejores sillas del condado.Las mejores sillas del condado.</p>
-            <a href="#" class="btn btn-primary btn-evntu">Generar órden de compra</a>
+            <p class="card-text">{{ServiceDescription }}</p>
+            <a href="#" class="btn btn-primary btn-evntu" v-show="!ServiceIsEvent">Generar órden de compra</a>
             <div class="service-price-container">
-                <h3 class="service-price">$20mxn</h3>
-                <h4 class="service-measurement"> p/hora</h4>
+                <h3 class="service-price" v-show="!ServiceIsEvent">$20mxn</h3>
+                <h4 class="service-measurement" v-show="!ServiceIsEvent"> p/hora</h4>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+const stringDefault = {
+  type: String,
+  required: true
+}
 export default {
   name: 'CategoryServiceCard',
   props: {
-    ServiceTitle: {
-      type: String,
-      default: ''
+    ServiceTitle: stringDefault,
+    ServiceDescription: stringDefault,
+    ServiceImage: stringDefault,
+    ServiceIsEvent: {
+      type: Boolean,
+      required: true
     }
   }
 

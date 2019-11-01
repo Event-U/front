@@ -78,11 +78,11 @@ export default {
   },
   // event
   async getEvent () {
+    console.log('get events')
     const response = await fetch(`${UrlBase}/event/`)
     const jsonBody = await response.json()
-
-    const { data } = jsonBody.data
-
+    console.log(jsonBody)
+    const { data } = jsonBody
     if (!response.ok) throw new Error('Ocurrió un error al obtener los usuarios')
 
     return data.event

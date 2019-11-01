@@ -1,27 +1,45 @@
 <template>
   <div class="container-fluid">
                     <div id="main-wrapper" class="list-services-content">
-                        <div class="row">
-                            <div class="col-4 align-center">
-                                <CategoryServiceCard/>
+
+                            <div class="col-4 align-center" v-for="(event, index) in events" :key="index">
+                                <CategoryServiceCard v-bind="event"/>
                             </div>
-                            <div class="col-4 align-center">
-                                <CategoryServiceCard/>
-                            </div>
-                            <div class="col-4 align-center">
-                                <CategoryServiceCard/>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
 </template>
 
 <script>
 import CategoryServiceCard from '../components/CategoryServiceCard'
+import api from '../lib/api'
 export default {
   name: 'MyEvents',
   components: {
     CategoryServiceCard
+  },
+  data () {
+    return {
+      events: {
+        type: Array,
+        default: () => ([])
+      }
+    }
+  },
+  async mounted () {
+    const events = await api.getEvent()
+    console.log('events mounted')
+    console.log(events)
+    this.events = events.map((event) => ({
+      ServiceTitle: event.name,
+      ServiceDescription: event.description,
+      ServiceImage: event.image,
+      ServiceIsEvent: true
+    }))
+
+    console.log(this.events)
+
+    this.loading = false
   }
 }
 </script>
