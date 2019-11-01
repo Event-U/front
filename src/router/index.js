@@ -5,6 +5,7 @@ import HelloWorld from '@/components/HelloWorld';
 import Login from '@/views/Login';
 import RegisterAcount from '@/views/RegisterAcount';
 import Dashboard from '@/views/Dashboard';
+import DashboardServices from '@/views/DashboardServices';
 Vue.use(Router)
 
 export default new Router({
@@ -27,6 +28,16 @@ export default new Router({
             path: '/dashboard',
             name: 'Dashboard',
             component: Dashboard
+        },
+        {
+            path: '/dashboard-services',
+            name: 'DashboardEvents',
+            component: DashboardServices
+        },
+        {
+            path: '/dashboard-providers',
+            name: 'DashboardProviders',
+            component: DashboardProviders
         }
     ]
 })

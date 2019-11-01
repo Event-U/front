@@ -62,7 +62,7 @@
                 <div class="container-fluid">
 
                     <div class="row">
-                        <organizator/>
+                        <ServiceList/>
                     </div>
                 </div>
             </main>
@@ -73,13 +73,12 @@
 </template>
 
 <script>
-import organizator from '../components/organizator'
+import ServiceList from '../components/ServiceList'
 export default {
-  name: 'Dashboard',
+  name: 'DashboardServices',
   components: {
-    organizator
+    ServiceList
   }
-
 }
 </script>
 <style scoped>
