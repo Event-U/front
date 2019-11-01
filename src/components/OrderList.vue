@@ -63,7 +63,7 @@
 
 <script>
 export default {
-  name:'OrderList'
+  name: 'OrderList'
 }
 </script>
 

@@ -1,6 +1,6 @@
 const UrlBase = 'https://event-uback.mybluemix.net'
 export default {
-
+// services
   async getServices () {
     const response = await fetch(`${UrlBase}/services/`)
     const jsonBody = await response.json()
@@ -38,6 +38,7 @@ export default {
 
     return data.service
   },
+  // users
   async getUsers () {
     const response = await fetch(`${UrlBase}/users/`)
     const jsonBody = await response.json()
@@ -67,6 +68,83 @@ export default {
 
   async getUserById (id) {
     const response = await fetch(`${UrlBase}/users/${id}`)
+    const jsonBody = await response.json()
+
+    const { data } = jsonBody.data
+
+    if (!response.ok) throw new Error('Ocurrió un error al obtener los posts')
+
+    return data
+  },
+  // event
+  async getEvent () {
+    const response = await fetch(`${UrlBase}/event/`)
+    const jsonBody = await response.json()
+
+    const { data } = jsonBody.data
+
+    if (!response.ok) throw new Error('Ocurrió un error al obtener los usuarios')
+
+    return data.event
+  },
+
+  async createEvent (event) {
+    console.log(event)
+    const response = await fetch(`${UrlBase}/event/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(event)
+    })
+
+    const jsonBody = await response.json()
+    console.log(jsonBody)
+    if (!response.ok) throw new Error('Ocurrió un error al obtener los usuarios')
+
+    return jsonBody.data
+  },
+
+  async getEventById (id) {
+    const response = await fetch(`${UrlBase}/event/${id}`)
+    const jsonBody = await response.json()
+
+    const { data } = jsonBody.data
+
+    if (!response.ok) throw new Error('Ocurrió un error al obtener los posts')
+
+    return data
+  },
+  // need
+  async getNeed () {
+    const response = await fetch(`${UrlBase}/need/`)
+    const jsonBody = await response.json()
+
+    const { data } = jsonBody.data
+
+    if (!response.ok) throw new Error('Ocurrió un error al obtener los usuarios')
+
+    return data.Need
+  },
+
+  async createNeed (need) {
+    const response = await fetch(`${UrlBase}/need/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(need)
+    })
+
+    const jsonBody = await response.json()
+
+    if (!response.ok) throw new Error('Ocurrió un error al obtener los usuarios')
+
+    return jsonBody.data
+  },
+
+  async getNeedById (id) {
+    const response = await fetch(`${UrlBase}/need/${id}`)
     const jsonBody = await response.json()
 
     const { data } = jsonBody.data

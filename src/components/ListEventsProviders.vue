@@ -9,7 +9,7 @@
             <h5 class="card-title list-services border-0">Mi gran evento</h5>
             <p class="card-text">Las mejores sillas del condado.Las mejores sillas del condado.Las mejores sillas del condado.Las mejores sillas del condado.Las mejores sillas del condado.</p>
             <button class="button button-primary" data-toggle="modal" data-target="#exampleModal5" data-whatever="@mdo">Generar cotización</button>
-          
+
         </div>
     </div>
                             </div>
@@ -20,7 +20,7 @@
             <h5 class="card-title list-services border-0">Mi gran evento</h5>
             <p class="card-text">Las mejores sillas del condado.Las mejores sillas del condado.Las mejores sillas del condado.Las mejores sillas del condado.Las mejores sillas del condado.</p>
             <button class="button button-primary" data-toggle="modal" data-target="#exampleModal5" data-whatever="@mdo">Generar cotización</button>
-            
+
         </div>
     </div>
                             </div>
@@ -52,7 +52,7 @@
                                                                     <option value="2">Mesas</option>
                                                                     <option value="3">Bebidas</option>
                                                                 </select>
-                                                            </div>                                              
+                                                            </div>
                                                         </div>
                                                 <div class="form-group">
                                                     <label for="message-text" class="col-form-label">Descripción:</label>
@@ -67,7 +67,6 @@
                                     </div>
                                 </div>
                             </div>
-            
         </div>
     </div>
                             </div>
@@ -154,8 +153,6 @@ export default {
     display: flex;
     justify-content: center;
 }
-
-
 .list-services-content img {
     border-radius: 50px 12px 5px!important;
     max-width: 100%!important;
