@@ -25,19 +25,31 @@
         <div class='sidebar'>
           <ul class='navbar-nav'>
             <li class='nav-item'>
-              <a href='#' class='nav-link px-2 sideMenuToggler d-flex align-items-center'>
+              <a
+                href='#'
+                class='nav-link px-2 sideMenuToggler d-flex align-items-center'
+                v-on:click='changePage(1)'
+              >
                 <i class='material-icons icon mr-3'>dashboard</i>
                 <span class='text'>Mis Eventos</span>
               </a>
             </li>
             <li class='nav-item'>
-              <a href='#' class='nav-link px-2 sideMenuToggler d-flex align-items-center'>
+              <a
+                href='#'
+                class='nav-link px-2 sideMenuToggler d-flex align-items-center'
+                v-on:click='changePage(2)'
+              >
                 <i class='material-icons icon mr-3'>group</i>
                 <span class='text'>Mis proveedores</span>
               </a>
             </li>
             <li class='nav-item'>
-              <a href='#' class='nav-link px-2 sideMenuToggler d-flex align-items-center'>
+              <a
+                href='#'
+                class='nav-link px-2 sideMenuToggler d-flex align-items-center'
+                v-on:click='changePage(3)'
+              >
                 <i class='material-icons icon mr-3'>insert_chart</i>
                 <span class='text'>Estadisticas</span>
               </a>
@@ -49,13 +61,21 @@
               </a>
             </li>
             <li class='nav-item'>
-              <a href='#' class='nav-link px-2 sideMenuToggler d-flex align-items-center'>
+              <a
+                href='#'
+                class='nav-link px-2 sideMenuToggler d-flex align-items-center'
+                v-on:click='changePage(4)'
+              >
                 <i class='material-icons icon mr-3'>work</i>
                 <span class='text'>Servicios</span>
               </a>
             </li>
             <li class='nav-item'>
-              <a href='#' class='nav-link sideMenuToggler px-2 d-flex align-items-center'>
+              <a
+                href='#'
+                class='nav-link sideMenuToggler px-2 d-flex align-items-center'
+                v-on:click='changePage(3)'
+              >
                 <i class='material-icons icon mr-3'>trending_up</i>
                 <span class='text'>Mis Inversiones</span>
               </a>
@@ -67,10 +87,10 @@
         <main>
           <div class='container-fluid'>
             <div class='row'>
-              <organizator v-on:click="changePage(1)" ></organizator>
-              <CategoryServices v-on:click="changePage(2)"></CategoryServices>
-              <AllCharts v-on:click="changePage(3)"></AllCharts>
-              <ServiceList v-on:click="changePage(4)"></ServiceList>
+              <organizator v-show='mostrarOrganizador'></organizator>
+              <CategoryServices v-show='mostrarCatServicios'></CategoryServices>
+              <AllCharts v-show='mostrarCharts'></AllCharts>
+              <ServiceList v-show='mostrarServicios'></ServiceList>
             </div>
           </div>
         </main>
@@ -102,45 +122,37 @@ export default {
   },
   methods: {
     changePage: function (menuOpen) {
-      let menuOptions = {
-        mostrarOrganizador: false,
-        mostrarServicios: false,
-        mostrarCatServicios: false,
-        mostrarCharts: false
-      }
       switch (menuOpen) {
         case 1:
-          menuOptions.mostrarOrganizador = true
-          menuOptions.mostrarCatServicios = false
-          menuOptions.mostrarCharts = false
-          menuOptions.mostrarServicios = false
+          this.mostrarOrganizador = true
+          this.mostrarCatServicios = false
+          this.mostrarCharts = false
+          this.mostrarServicios = false
           break
         case 2:
-          menuOptions.mostrarOrganizador = false
-          menuOptions.mostrarCatServicios = true
-          menuOptions.mostrarCharts = false
-          menuOptions.mostrarServicios = false
+          this.mostrarOrganizador = false
+          this.mostrarCatServicios = true
+          this.mostrarCharts = false
+          this.mostrarServicios = false
           break
         case 3:
-          menuOptions.mostrarOrganizador = false
-          menuOptions.mostrarCatServicios = false
-          menuOptions.mostrarCharts = true
-          menuOptions.mostrarServicios = false
+          this.mostrarOrganizador = false
+          this.mostrarCatServicios = false
+          this.mostrarCharts = true
+          this.mostrarServicios = false
           break
         case 4:
-          menuOptions.mostrarOrganizador = false
-          menuOptions.mostrarCatServicios = false
-          menuOptions.mostrarCharts = false
-          menuOptions.mostrarServicios = true
+          this.mostrarOrganizador = false
+          this.mostrarCatServicios = false
+          this.mostrarCharts = false
+          this.mostrarServicios = true
           break
         default:
-          menuOptions.mostrarOrganizador = true
-          menuOptions.mostrarCatServicios = false
-          menuOptions.mostrarCharts = false
-          menuOptions.mostrarServicios = false
-      }
-      return {
-        menuOptions
+          this.mostrarOrganizador = true
+          this.mostrarCatServicios = false
+          this.mostrarCharts = false
+          this.mostrarServicios = false
+          break
       }
     }
   }
