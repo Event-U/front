@@ -1,5 +1,5 @@
 <template>
-  <div class="card text-center">
+  <div id="main" class="card text-center">
         <img src="../assets/img/anthony-reungere-6bObR3bngCA-unsplash.jpg" class="card-img-top" alt="Placeholder">
         <div class="card-body">
             <span class="star-rate fa fa-star checked"></span>
