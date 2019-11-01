@@ -6,16 +6,12 @@ import Login from '@/views/Login';
 import RegisterAcount from '@/views/RegisterAcount';
 import Dashboard from '@/views/Dashboard';
 import DashboardServices from '@/views/DashboardServices';
+import DashboardProviders from '@/views/DashboardProviders';
 Vue.use(Router)
 
 export default new Router({
     routes: [{
             path: '/',
-            name: 'Login',
-            component: Login
-        },
-        {
-            path: '/login',
             name: 'Login',
             component: Login
         },
@@ -28,16 +24,6 @@ export default new Router({
             path: '/dashboard',
             name: 'Dashboard',
             component: Dashboard
-        },
-        {
-            path: '/dashboard-services',
-            name: 'DashboardEvents',
-            component: DashboardServices
-        },
-        {
-            path: '/dashboard-providers',
-            name: 'DashboardProviders',
-            component: DashboardProviders
         }
     ]
 })
