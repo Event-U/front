@@ -20,6 +20,15 @@
           aria-controls="nav-profile"
           aria-selected="false"
         >Nuevo evento</a>
+        <a
+          class="nav-item nav-link text-muted"
+          id="nav-cotizacion-tab"
+          data-toggle="tab"
+          href="#nav-cotizacion"
+          role="tab"
+          aria-controls="nav-cotizacion"
+          aria-selected="false"
+        >Cotizaciones</a>
       </div>
     </nav>
     <div class="tab-content" id="nav-tabContent">
@@ -34,6 +43,9 @@
       <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
         <AddEvents></AddEvents>
       </div>
+      <div class="tab-pane fade" id="nav-cotizacion" role="tabpanel" aria-labelledby="nav-cotizacion-tab">
+        <OrderList></OrderList>
+      </div>
     </div>
   </div>
 </template>
@@ -41,11 +53,13 @@
 <script>
 import AddEvents from './AddEvents'
 import MyEvents from './MyEvents'
+import OrderList from './OrderList'
 export default {
   name: 'organizator',
   components: {
     AddEvents,
-    MyEvents
+    MyEvents,
+    OrderList
   }
 }
 </script>

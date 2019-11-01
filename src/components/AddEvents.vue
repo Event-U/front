@@ -16,56 +16,58 @@
       <label for='txtDate'>Fecha de tu evento</label>
       <input type='text' class='form-control inputCuston' id='txtDate' v-model="date"/>
     </div>
-    <!-- <div class='form-group'>
-      <label for='scState'>Estado</label>
-      <select class='form-control inputCuston' id='scState'>
-        <option>Ciudad de México</option>
-        <option>Estado de México</option>
-        <option>Oaxaca</option>
-        <option>Veracruz</option>
-        <option>Yucatan</option>
-      </select>
-    </div>
-    <div class='form-group'>
-      <label for='scTown'>Municipio o Delegación</label>
-      <select class='form-control inputCuston' id='scTown'>
-        <option>Huehuetoca</option>
-        <option>Coyotepec</option>
-        <option>Cuautitlan</option>
-      </select>
-    </div>
-    <div class='form-group'>
-      <label for='scPlace'>Colonia</label>
-      <select class='form-control inputCuston' id='scPlace'>
-        <option>Huehuetoca</option>
-        <option>Santa Teresa</option>
-        <option>Santa Maria</option>
-      </select>
-    </div>
-    <div class='form-group'>
-      <label for='txtCalle'>Calle</label>
-      <input type='text' class='form-control inputCuston' id='txtCp' />
-    </div>
-    <div class='form-group'>
-      <label for='txtNumberExt'>Número Interior</label>
-      <input type='text' class='form-control inputCuston' id='txtNumberExt' />
-    </div>
-    <div class='form-group'>
-      <label for='txtNumberInt'>Número exterior</label>
-      <input type='text' class='form-control inputCuston' id='txtNumberInt' />
-    </div>
-    <div class='custom-control custom-switch'>
-      <input type='checkbox' class='custom-control-input' id='swFisica' />
-      <label class='custom-control-label inputCuston' for='swFisica'>Es Fisica</label>
-    </div>
-    <div class='custom-control custom-switch'>
-      <input type='checkbox' class='custom-control-input' id='swMoral' />
-      <label class='custom-control-label inputCuston' for='swMoral'>Es Moral</label>
-    </div> -->
-
     <div class='form-group mt-3'>
       <button type='button' class='btn btn-eventU' v-on:click='saveEvent($event)'>Guardar</button>
       <button type='button' class='btn btn-danger'>Cancelar</button>
+    </div>
+    <div class='form-group'>
+      <label for='txtDate'>Cantidad</label>
+      <input type='text' class='form-control inputCuston' id='txtCantidad' />
+    </div>
+    <div class='form-group'>
+      <label for='selService'>Selecciona Servicio</label>
+      <select name="selService" >
+        <option value="5dbb2b39ac68b60e55971387">ESPACIOS CERRADOS</option>
+        <option value="5dbb2b65ac68b60e55971388">JARDINES</option>
+        <option value="5dbb2b6eac68b60e55971389">MESAS</option>
+        <option value="5dbb2b7cac68b60e5597138a">SILLAS</option>
+        <option value="">INFLABLES</option>
+        <option value="5dbbea3ddf89683c2aead885">BUFFET DE COMIDA MEXICANA</option>
+        <option value="5dbc4909bd6ca85e85dfe89b">CARPAS</option>
+
+      </select>
+      <button type='button' class='btn btn-eventU' v-on:click='saveEvent($event)'>Guardar</button>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-dark">
+  <thead>
+    <tr>
+
+      <th scope="col">Servicio</th>
+      <th scope="col">Cantidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">ESPACIOS CERRADOS</th>
+      <td>1</td>
+
+    </tr>
+    <tr>
+      <th scope="row">MESAS</th>
+      <td>10</td>
+
+    </tr>
+    <tr>
+      <th scope="row">SILLAS</th>
+      <td>100</td>
+
+    </tr>
+  </tbody>
+</table>
+      </div>
     </div>
   </form>
 </template>
@@ -78,7 +80,11 @@ export default {
       name: '',
       descrption: '',
       date: '',
-      organizator: ''
+      organizator: '',
+      catServices: {
+        type: Array,
+        default: () => ([])
+      }
     }
   },
   methods: {
@@ -102,6 +108,17 @@ export default {
       console.log(res)
       this.loading = false
       this.$router.push('/')
+    },
+    async selectCatServices (_event) {
+      _event.preventDefault()
+
+      let catServices = await api.catServices()
+      this.catServices = catServices.map((catService) => ({
+        id: catService._id,
+        value: catService.name
+      }))
+      this.loading = false
+      this.$router.push('/dashboard')
     }
   }
 }

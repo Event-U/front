@@ -152,6 +152,44 @@ export default {
     if (!response.ok) throw new Error('Ocurrió un error al obtener los posts')
 
     return data
+  },
+  // catServices
+  async getCatServices () {
+    const response = await fetch(`${UrlBase}/catServices/`)
+    const jsonBody = await response.json()
+
+    const { data } = jsonBody.data
+
+    if (!response.ok) throw new Error('Ocurrió un error al obtener los servicios')
+
+    return data.catServices
+  },
+
+  async createCatServices (service) {
+    const response = await fetch(`${UrlBase}/catServices/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(service)
+    })
+
+    const jsonBody = await response.json()
+
+    if (!response.ok) throw new Error('Ocurrió un error al obtener los servicios')
+
+    return jsonBody.data
+  },
+
+  async getCatServiceById (id) {
+    const response = await fetch(`${UrlBase}/catServices/${id}`)
+    const jsonBody = await response.json()
+
+    const { data } = jsonBody.data
+
+    if (!response.ok) throw new Error('Ocurrió un error al obtener los servicios')
+
+    return data.catServices
   }
 
 }

@@ -54,7 +54,7 @@ export default {
     }
   },
   methods: {
-    async saveService(_event) {
+    async saveService (_event) {
       _event.preventDefault()
       this.loading = true
       let service = {
@@ -64,10 +64,10 @@ export default {
         image: ''
       }
 
-     service.name = this.name
-     service.descrption = this.descrption
-     service.catService = this.catService
-     service.image = this.image
+      service.name = this.name
+      service.descrption = this.descrption
+      service.catService = this.catService
+      service.image = this.image
       console.log(service)
       let res = await api.createServices(service)
       console.log(res)
