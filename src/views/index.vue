@@ -1,18 +1,22 @@
 <template>
- <div id="index">
-   <AllCharts/>
+<div id="index">
+    <OrderList/>
 </div>
 </template>
 
 <script>
 import Investors from '../components/Investors'
-import AllCharts from '../components/AllCharts'
+import NewEventForm from '../components/NewEventForm'
+import ListEventsProviders from '../components/ListEventsProviders'
+import OrderList from '../components/OrderList'
 
 export default {
   name: 'Index',
   components: {
     Investors,
-    AllCharts
+    NewEventForm,
+    ListEventsProviders,
+    OrderList
   }
 }
 </script>

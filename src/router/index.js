@@ -1,19 +1,17 @@
 /* eslint-disable */
 import Vue from 'vue';
 import Router from 'vue-router';
-import HelloWorld from '@/components/HelloWorld';
 import Login from '@/views/Login';
 import RegisterAcount from '@/views/RegisterAcount';
 import Dashboard from '@/views/Dashboard';
-import DashboardServices from '@/views/DashboardServices';
-import DashboardProviders from '@/views/DashboardProviders';
+import Index from '@/views/Index';
 Vue.use(Router)
 
 export default new Router({
     routes: [{
             path: '/',
-            name: 'Login',
-            component: Login
+            name: 'Index',
+            component: Index
         },
         {
             path: '/register',

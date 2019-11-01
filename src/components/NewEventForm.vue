@@ -29,25 +29,6 @@
                                         <div class="row">
                                             <div class="col">
                                                 <label for="validationCustomUsername">Precio Unitario</label>
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="inputGroupPrepend">$</span>
-                                                    </div>
-                                                    <input type="text" class="form-control" id="validationCustomUsername" placeholder="$00.00" aria-describedby="inputGroupPrepend" required>
-                                                    <div class="invalid-feedback">
-                                                        Introduce correctamente el precio por unidad
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <label for="inputState">Unidad de medida</label>
-                                                <select id="inputState" class="form-control custom-select">
-                                                                    <option selected>Elegir</option>
-                                                                    <option>Hora</option>
-                                                                    <option>Persona</option>
-                                                                    <option>Servicio</option>
-                                                                    <option>Lo que necesitas</option>
-                                                        </select>
                                             </div>
                                         </div>
                                     </form>
