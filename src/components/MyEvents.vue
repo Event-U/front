@@ -1,13 +1,12 @@
 <template>
-  <div class="container-fluid">
-                    <div id="main-wrapper" class="list-services-content">
+  <div>
+      <div class="list-services-content">
+              <div class="col-4" v-for="(event, index) in events" :key="index">
+                  <CategoryServiceCard v-bind="event"/>
+              </div>
 
-                            <div class="col-4 align-center" v-for="(event, index) in events" :key="index">
-                                <CategoryServiceCard v-bind="event"/>
-                            </div>
-
-                    </div>
-                </div>
+      </div>
+  </div>
 </template>
 
 <script>

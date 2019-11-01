@@ -45,7 +45,7 @@
                                                             <div class="input-group-prepend">
                                                                 <label class="input-group-text" for="inputGroupSelect01">Tus servicios</label>
                                                             </div>
-                                                                <select class="custom-select" id="inputGroupSelect01">
+                                                                <select class="custom-select" id="inputGroupSelect01" v-model="catService">
                                                                     <option selected>Seleccionar</option>
                                                                     <option value="1">Sillas</option>
                                                                     <option value="2">Mesas</option>
@@ -54,14 +54,16 @@
                                                             </div>
                                                         </div>
                                                 <div class="form-group">
+                                                    <label for="message-text" class="col-form-label">Precio de tu cotización:</label>
+                                                      <input type="text" class="form-control input-group-lg first-input-register effect-8 focus-border" placeholder="El precio de tu cotización" v-model="price"/>
                                                     <label for="message-text" class="col-form-label">Descripción:</label>
-                                                    <textarea class="form-control" id="message-text"></textarea>
+                                                    <textarea class="form-control" id="message-text" v-model="description"></textarea>
                                                 </div>
                                             </form>
                                         </div>
                                         <div class="modal-footer">
                                             <button class="button button-danger" data-dismiss="modal">Cerrar</button>
-                                            <button class="button button-primary">Enviar</button>
+                                            <button class="button button-primary" v-on:click='saveQuotation($event)'>Enviar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -90,6 +92,35 @@ export default {
   name: 'MyEvents',
   components: {
     CategoryServiceCard
+  },data () {
+    return {
+      name: '',
+      provider: '',
+      price: '',
+      description: ''
+    }
+  },
+  methods: {
+    async saveQuotation(_event) {
+      _event.preventDefault()
+      this.loading = true
+      let quotation = {
+        name: '',
+        provider: "5db9377b2806a23067a99e7b",
+        price: '',
+        description: ''
+      }
+
+     quotation.name = this.name
+     quotation.descrption = this.descrption
+     quotation.price = this.price
+     quotation.description = this.description
+      console.log(quotation)
+      let res = await api.createQuotation(quotation)
+      console.log(res)
+      this.loading = false
+      this.$router.push('/dashboard')
+    }
   }
 }
 </script>
