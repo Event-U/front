@@ -23,7 +23,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .cat-servicios .card {
     border-radius: 50px 12px 5px!important;
@@ -103,8 +103,9 @@ export default {
 }
 
 #main img {
-    position: absolute;
-    top: -90px;
-    max-width:100%;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+    object-fit: cover;
 }
 </style>

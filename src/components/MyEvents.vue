@@ -1,8 +1,10 @@
 <template>
   <div>
       <div class="list-services-content">
-              <div class="col-4" v-for="(event, index) in events" :key="index">
+        <div class="row">
+              <div class="col-md-6" v-for="(event, index) in events" :key="index">
                   <CategoryServiceCard v-bind="event"/>
+              </div>
               </div>
       </div>
   </div>
@@ -41,12 +43,13 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .list-services-content .card {
     border-radius: 50px 12px 5px!important;
     border: none;
     margin-bottom: 20px;
-      box-shadow: 0px 0px 30px rgba(0, 0, 0, .2);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, .2);
+    transition: ease-in-out 0.4s;
 
 }
 .list-services-content .card-text {
@@ -54,11 +57,11 @@ export default {
     font-weight: normal!important;
     font-size: .8em;
 }
-.list-services-content .card:hover {
+/* .list-services-content .card:hover {
     border: solid #ffff00 3px;
     box-shadow: 0px 0px 25px #0000009e;
     transition: ease-in 0.3s;
-}
+} */
 .list-services {
     font-size: 2em;
     color: black;
@@ -91,6 +94,10 @@ export default {
 }
 .list-services-content img {
     border-radius: 50px 12px 5px!important;
-    max-width: 100%!important;
+    /* max-width: 100%!important; */
+    width: auto;
+    height: 9em;
+    overflow: hidden;
+    object-fit: cover;
 }
 </style>

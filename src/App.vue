@@ -228,6 +228,7 @@ export default {
   border-radius: 50px 12px 5px !important;
   border: none;
   margin-bottom: 20px;
+  transition: .4s ease-in-out;
 }
 
 .list-services-content .card-text {

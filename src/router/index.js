@@ -8,6 +8,7 @@ import DashboardProviders from '@/views/DashboardProviders';
 import Index from '@/views/Index';
 import Landing from '@/views/Landing';
 import MyEvents from '@/components/MyEvents';
+import test from '@/views/test';
 Vue.use(Router)
 
 export default new Router({
@@ -40,6 +41,11 @@ export default new Router({
             path: '/MyEvents',
             name: 'MyEvents',
             component: MyEvents
+        },
+        {
+            path: '/test',
+            name: 'test',
+            component: test
         }
     ]
 })

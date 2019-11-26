@@ -2,24 +2,24 @@
   <div class="container-fluid">
                     <div id="main-wrapper" class="list-services-content">
                         <div class="row">
-                            <div class="col-4 align-center">
+                            <div class="col-md-4 align-center">
                                 <CategoryServiceCard/>
                             </div>
-                            <div class="col-4 align-center">
+                            <div class="col-md-4 align-center">
                                 <CategoryServiceCard/>
                             </div>
-                            <div class="col-4 align-center">
+                            <div class="col-md-4 align-center">
                                 <CategoryServiceCard/>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-4 align-center">
+                            <div class="col-md-4 align-center">
                                 <CategoryServiceCard/>
                             </div>
-                            <div class="col-4 align-center">
+                            <div class="col-md-4 align-center">
                                 <CategoryServiceCard/>
                             </div>
-                            <div class="col-4 align-center">
+                            <div class="col-md-4 align-center">
                                 <CategoryServiceCard/>
                             </div>
                         </div>
